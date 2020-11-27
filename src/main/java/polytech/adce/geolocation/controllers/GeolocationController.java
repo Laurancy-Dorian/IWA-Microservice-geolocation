@@ -54,41 +54,6 @@ public class GeolocationController {
         return infectedRepository.findAll();
     }
 
-    // TODO divide this method in a Services class
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public void processLocation(@RequestBody final Geolocation geolocation) {
-        System.out.println(geolocation);
-        List<Infected> userInfections = infectedRepository.findByUserId(geolocation.getUsername());
-        System.out.println(userInfections);
-/**
-        boolean infected = false;
-        for (Infected i : userInfections) {
-            if (i.getDate_end_infected() == null) {
-                infected = true;
-            }
-        }
 
-        if (infected) {
-            // Store this loc in db
-            geolocationRepository.save(geolocation);
-        }
 
-        // TODO Send a request to proximity microservice
-        URL url;
-        try {
-            String requestUrl = proximityUrl + ":" + proximityPort;
-            url = new URL(requestUrl);
-            HttpURLConnection con = (HttpURLConnection) url.openConnection();
-            con.setRequestMethod("POST");
-            ObjectOutputStream out = new ObjectOutputStream( con.getOutputStream() );
-            out.writeObject(geolocation);
-            out.close();
-            // TODO SEND REQUEST
-
-        } catch (Exception e) {
-            System.out.println("Connexion with Proximity Microservice failed");
-        }
-**/
-    }
 }
