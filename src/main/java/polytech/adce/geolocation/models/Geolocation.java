@@ -13,8 +13,7 @@ import java.util.Date;
 public class Geolocation {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int user_id;
+    private String username;
     @Id
     private Date geolocation_timestamp;
     private double latitude;
@@ -22,12 +21,12 @@ public class Geolocation {
 
     public Geolocation() {}
 
-    public int getUser_id() {
-        return user_id;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public double getLatitude() {
@@ -55,6 +54,6 @@ public class Geolocation {
     }
 
     public String toString() {
-        return "User : " + this.user_id + " Lat : " + this.latitude + " Long : " + this.longitude + " timestamp : " + this.getGeolocation_timestamp();
+        return "User : " + this.username + " Lat : " + this.latitude + " Long : " + this.longitude + " timestamp : " + this.getGeolocation_timestamp();
     }
 }

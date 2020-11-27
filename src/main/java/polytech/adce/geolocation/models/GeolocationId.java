@@ -4,6 +4,6 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class GeolocationId implements Serializable {
-    int user_id;
+    String username;
     Date geolocation_timestamp;
 }

@@ -12,8 +12,7 @@ import java.util.Date;
 public class Infected {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int user_id;
+    private String username;
     @Id
     private Date date_start_infected;
     private Date date_end_infected;
@@ -21,12 +20,12 @@ public class Infected {
 
     public Infected() {}
 
-    public int getUser_id() {
-        return user_id;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public Date getDate_start_infected() {
@@ -54,6 +53,6 @@ public class Infected {
     }
 
     public String toString() {
-        return "User Infected Id : " + this.user_id + " start : " + this.getDate_start_infected() + " end : " + this.getDate_end_infected() + " contact : " + this.isContact();
+        return "User Infected Id : " + this.username + " start : " + this.getDate_start_infected() + " end : " + this.getDate_end_infected() + " contact : " + this.isContact();
     }
 }

@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface InfectedRepository extends JpaRepository<Infected, Long> {
 
-    @Query("select i from infected i where i.user_id = ?1")
-    List<Infected> findByUserId(int user_id);
+    @Query("select i from infected i where i.username = ?1")
+    List<Infected> findByUserId(String username);
 
 }
